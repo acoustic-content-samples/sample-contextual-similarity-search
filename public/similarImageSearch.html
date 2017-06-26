@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "w3.org/TR/html4/loose.dtd">
+<html>
+
+    <head>
+        <title>Watson Content Hub Similar (Tags) Search</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="./style.css" />
+        <script type='text/javascript' src='./sampleUi.js'></script>
+        <script type='text/javascript' src='./wchClient.js'></script>
+    </head>
+
+    <body class="bodyContainer">
+        <div class="headingText">
+            <h1>Watson Content Hub Similar (Tags) Search API Sample</h1>
+            <p>Click one of the images in the left window to start a search to retrieve and display similar images in the right window. The search is based on matching tags, images with the most matches are listed first.
+                The search query that is used is shown below.
+            </p>
+        </div>
+        <table>
+            <tbody id="main-body">
+                <tr>
+                    <td>
+                        <p class="visibleURL">
+                            <span style="cursor: help" title="The filter and parameters to enable contextual similar search">
+                                <span style="font-style: italic;">?filter=similar&similar-source-id=</span>
+                                <span style="font-style: italic;" id="sample-search-source-id">00000000-0000-0000-0000-000000000000</span>
+                                <span style="font-style: italic;">&similar-source-classification=asset</span>
+                            </span>
+                            <span>&fq=assetType:image&q=*:*&fl=name,tags,id,resource&rows=100</span>
+                        </p>
+                    </td>
+                </tr>
+                    <td>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th><H3 class="noMarginsTopBotttomHeader">All images</H3></th>
+                                <th><H3 class="noMarginsTopBotttomHeader">Query Results</H3></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div id="sourceImagesArea" class="displayImagesArea">
+                                            <h5 class="noMarginsTopBotttomHeader">Click an image to trigger the query for similar images</h5>
+                                            <div id="sourceImagesList" class="imageContainers" >
+                                                <table>
+                                                    <tbody id="source-table">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <h5 class="noMarginsTopBotttomHeader" style="margin-top:12px">Tags on selected source image</h5>
+                                            <div id="sourceImagesSelectedTags" class="tagContainers">
+                                                <div id="source-tags" class="tagsDisplayArea">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="matchedColumn">
+                                        <div id="matchedImagesArea" class="displayImagesArea">
+                                            <h5 class="noMarginsTopBotttomHeader"> Click an image to show its tags</h5>
+                                            <div id="matchedImagesList" class="imageContainers">
+                                                <table>
+                                                    <tbody id="matched-table">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <h5 class="noMarginsTopBotttomHeader" style="margin-top:12px">Tags that match the source image are highlighted in bold text and underlined.</h5>
+                                            <div id="matchedImageSelectedTags" class="tagContainers">
+                                                <div id="matched-tags" class="tagsDisplayArea">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script language="JavaScript">
+
+            function initalImageLoad() {
+                searchSourceImages(function (imagesResponse) {
+                    console.log('searchSourceImages returned ' + imagesResponse.numFound + ' images');
+                    if (imagesResponse.numFound === 0) {
+                        buildImageTableNoImages('source-table', 'There appears to be no images available.', 'source-tags');
+                    } else {
+                        buildSourceImageTable(imagesResponse.documents);
+                    }
+                });
+            }
+
+            function invokeSimilarImageSearch(imageId){
+                similarSearch(imageId, function(imagesResponse){
+                    console.log('invokeSimilarSearch returned ' + imagesResponse.numFound + ' images');
+                    if(imagesResponse.numFound === 0) {
+                        buildImageTableNoImages('matched-table', 'No images found with matching tags.', 'matched-tags');
+                    } else {
+                        buildMatchedImageTable(imagesResponse.documents);
+                    }
+                });
+            }
+
+            initalImageLoad();
+
+        </script>
+
+    </body>
+
+</html>
