@@ -1,7 +1,7 @@
 # Sample similarity search using the Contextual Search Service API
 
-This sample shows the similar (tags) search capability of IBM Watson Content Hub (WCH) contextual search service.
-This technical sample is intended for developers who want to explore the WCH APIs and the data model.  
+This sample shows the similar (tags) search capability of Acoustic Content (formerly Watson Content Hub or WCH) contextual search service.
+This technical sample is intended for developers who want to explore the Acoustic Content APIs and the data model.  
 
 The sample illustrates:
 - The use of similar search provided by contextual search service to search for images whose tags match a specified image.  
