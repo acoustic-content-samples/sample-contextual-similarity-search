@@ -128,10 +128,10 @@ const resourceServiceApiUrl = baseTenantApiUrl + '/authoring/v1/resources/';
   
 5. Update `username` and `password` variables with your login details  for authentication.  
 
-### Resources
+## Resources
 
-API Explorer reference documentation: https://developer.ibm.com/api/view/id-618  
-  
-Watson Content Hub developer center: https://developer.ibm.com/customer-engagement/watson-content-hub/  
-  
-Watson Content Hub forum: https://developer.ibm.com/answers/smartspace/wch/  
+Acoustic Content developer documentation: https://developer.goacoustic.com/acoustic-content/docs
+
+Acoustic Content API reference documentation: https://developer.goacoustic.com/acoustic-content/reference
+
+Acoustic Content Samples Gallery: https://content-samples.goacoustic.com/
