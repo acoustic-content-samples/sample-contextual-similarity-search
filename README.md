@@ -63,7 +63,7 @@ To set the variables for the base API URL for your tenant, you can obtain the va
 In the IBM Watson Content Hub user interface, open the "Hub information" dialog from the "About" flyout menu in the left navigation pane. A pop-up window displays the tenant's Watson Content Hub ID, API URL, and Hostname.
 
 For example, the base API URL is similar to:  
-const baseTenantUrl = "https://my12.digitalexperience.ibm.com/api/12345678-9abc-def0-1234-56789abcdef0";
+const baseTenantUrl = "https://content-eu-4.content-cms.com/api/12345678-9abc-def0-1234-56789abcdef0";
 
 #### 3. Enable CORS support for your tenant
 
