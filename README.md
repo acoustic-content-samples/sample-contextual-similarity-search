@@ -7,7 +7,7 @@ The sample illustrates:
 - The use of similar search provided by contextual search service to search for images whose tags match a specified image.  
  
   
-### Exploring the Watson Content Hub similar search API capabilities
+### Exploring the Acoustic Content similar search API capabilities
 
 The contextual search service provides the functionality to filter search results based on items with similar tags.   
 
@@ -45,11 +45,11 @@ This sample covers only the `similar` filter.
 For running the sample, your tenant must have some sample data with tags specified.
 
 You can find some sample images that can be uploaded in `similarImageSearchSampleData.zip`. 
-This zip file includes images with various types of tags, user specified tags, Watson concept tags, and some tags that are embedded in the image metadata.
+This zip file includes images with various types of tags, user specified tags, AI concept tags, and some tags that are embedded in the image metadata.
 
 #### Prerequisites
 
-- Watson Content Hub account.
+- Acoustic Content account.
 
 #### 1. Download the files
 
@@ -60,14 +60,14 @@ Download the project files into any folder on your workstation.
 This sample uses a hardcoded base API URL, update the base API URL in `/public/wchClient.js` file.
 
 To set the variables for the base API URL for your tenant, you can obtain the variables Content hub ID and Hostname from the WCH user interface.
-In the IBM Watson Content Hub user interface, open the "Hub information" dialog from the "About" flyout menu in the left navigation pane. A pop-up window displays the tenant's Watson Content Hub ID, API URL, and Hostname.
+In the Acoustic Content user interface, open the "Hub information" dialog from the "About" flyout menu in the left navigation pane. A pop-up window displays the tenant's Acoustic Content hub ID, API URL, and Hostname.
 
 For example, the base API URL is similar to:  
 const baseTenantUrl = "https://content-eu-4.content-cms.com/api/12345678-9abc-def0-1234-56789abcdef0";
 
 #### 3. Enable CORS support for your tenant
 
-To use this sample, you need to enable CORS support for your tenant. To control the CORS enablement for Watson Content Hub, go to Hub Set up -> General settings -> Security tab. Add your domain (or "*" for any domain) and click Save.
+To use this sample, you need to enable CORS support for your tenant. To control the CORS enablement for Acoustic Content, go to Hub Set up -> General settings -> Security tab. Add your domain (or "*" for any domain) and click Save.
 
 #### 4. Starting the sample
 
@@ -78,7 +78,7 @@ To use this sample, you need to enable CORS support for your tenant. To control 
 
 You can assign user tags to items by following the steps that are outlined here:
 
-- Log in to the Watson Content Hub.
+- Log in to Acoustic Content.
 
 - You can set the tag for the content item or asset (image) by selecting the `tags` twistie on the right side-bar and clicking the `Add tag` link while `creating` or `editing` a content item or asset.
 
