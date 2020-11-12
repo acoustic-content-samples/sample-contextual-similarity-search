@@ -15,9 +15,9 @@ The contextual search parameters can be started along with the basic Solr query 
 
 Currently, contextual search provides the following three custom filters:
 - **accept-language** - This filter along with basic search parameters can be used to search documents based on the current user's request preferred language.  
-[Click here for public github repository for locale sample.](https://github.com/ibm-wch/sample-contextual-locale-search)
+[Click here for public github repository for locale sample.](https://github.com/acoustic-content-samples/sample-contextual-locale-search)
 - **proximity** - This filter along with basic search parameters can be used to search documents with location information within a specific proximity from the specified center-point or the user's current position.  
-[Click here for public github repository for proximity sample.](https://github.com/ibm-wch/sample-contextual-proximity-search)
+[Click here for public github repository for proximity sample.](https://github.com/acoustic-content-samples/sample-contextual-proximity-search)
 - **similar** - This filter along with basic search parameters can be used to search documents with similar (that is, one or more matching) tags to the item with the 
 specified ID (uuid) assigned to the `similar-source-id` parameter and specified classification assigned to the `similar-source-classification` parameter. The source item can be a content item, asset, etc.
 The filter does not impose any restriction on what items can be matched. For example, you can search for images that have similar tags to a specified content item, or 
